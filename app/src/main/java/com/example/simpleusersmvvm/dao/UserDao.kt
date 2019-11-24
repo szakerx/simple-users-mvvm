@@ -5,13 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import com.example.simpleusersmvvm.models.User
 
 class UserDao {
-    private val userList = mutableListOf<User>() //sztuczna baza danych
+
+    // klasa Data Access Object, która ma pobierać dane z bazy danych 
+    // dla każdej klasy z modelu mogłaby być osobna
+
+    private val userList = mutableListOf<User>() // lista userów
 
     fun addUser(user: User) {
-        userList.add(user) //proces dodania uzytkownika do bazy danych
+        userList.add(user) // dodanie użytkownika do bazy danych 
     }
 
     fun getUsers(): List<User> {
-        return userList
+        return userList // pobranie użytkowników z baz danych
     }
 }

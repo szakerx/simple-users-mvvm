@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUi() {
-        // fabryka ViewModela
-        val factory = InjectorUtils.provideUserViewModelFactory()
 
-        // wyprodukowanie nowego lub otrzymanie istniejącego ViewModela
+        // fabryka ViewModelu
+        // zaimplementowana własnoręcznie, żeby ułatwić późniejsze testowanie
+        val factory = InjectorUtils.provideUserViewModelFactory() 
+
+        // wyprodukowanie nowego lub otrzymanie istniejącego ViewModelu
         val viewModel = ViewModelProviders.of(this, factory).get(MainActivityViewModel::class.java)
 
         // wzorzec obserwatora

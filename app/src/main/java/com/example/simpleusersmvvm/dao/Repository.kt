@@ -4,6 +4,9 @@ import com.example.simpleusersmvvm.models.User
 
 class Repository private constructor(private val userDao: UserDao){
 
+    // punkt zarządzania bazami
+    // miejsce, w którym można określić skąd pobierać dane
+
     companion object{
         private var instance: Repository? = null
 
